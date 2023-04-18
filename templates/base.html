@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://news.ycombinator.com/favicon.ico">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<style>
+</style>
+<body style="padding-left:100px; padding-right:100px; ">
+    <navbar style="margin-bottom:0;">
+        {% block navbar %}{% endblock navbar %}
+    </navbar>
+    <tr id="pagespace" title="" style="height:10px"></tr>
+    <main>
+        {% block content %}{% endblock content %}
+        <td><img src="s.gif" height="10" width="0"><table width="100%" cellspacing="0" cellpadding="1"><tbody><tr><td bgcolor="#ff6600"></td></tr></tbody></table><br>
+<center><a href="https://www.ycombinator.com/apply/">Applications are open for YC Summer 2023</a></center><br>
+<center><span class="yclinks"><a href="newsguidelines.html">Guidelines</a> | <a href="newsfaq.html">FAQ</a> | <a href="lists">Lists</a> | <a href="https://github.com/HackerNews/API">API</a> | <a href="security.html">Security</a> | <a href="https://www.ycombinator.com/legal/">Legal</a> | <a href="https://www.ycombinator.com/apply/">Apply to YC</a> | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br>
+<form method="get" action="//hn.algolia.com/">Search: <input type="text" name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="false"></form></center></td>
+    </main>
+    {% comment %} ----------------------------- {% endcomment %}
+
+</body>
+</html>

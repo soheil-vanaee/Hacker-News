@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Hacker News{% endblock title %}
+
+{% block navbar %}
+<style>
+    a{
+        text-decoration: none;
+        color: black;
+        margin-left: 9px;
+    }
+    li{
+        text-align: center;
+    }
+    ul {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        display: flex;
+        background-color: #FF6600;
+        list-style-type: none;
+        margin: 0;
+      }
+</style>
+<ul>
+    <img src="https://news.ycombinator.com/y18.gif" width="18" height="18" style="border:1px white solid;margin-left: 0;">
+    <li><a href="default.asp"><b>Hacker News</b></a></li>
+    <li><a href="default.asp">Home</a></li>
+    <li><a href="/admin">admin</a></li>
+    <li><a href="contact.asp">Contact</a></li>
+    <li><a href="about.asp">About</a></li>
+</ul>
+{% endblock navbar %}
+{% block content %}
+<style>
+    html{
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: small;
+    }
+    ul{
+        padding-left:2px;
+        padding-bottom: 2px;
+        padding-top: 2px;
+        text-align: center;
+    }
+    main{
+        background-color: #F6F6EF;
+    }
+    .container {
+        background-color: #F6F6EF;
+        padding-top: 5px;
+    }
+</style>
+<div class="container">
+    {% for Article in ArticleData  %}
+    <a href="{{ Article.Article_External_Link }}">{{Article.id}} 🔺 {{ Article.title }} <span style="color:#828282;font-size: x-small;"> {{ Article.little_slug }} </span></a>
+    <div style="color:#828282;font-size: smaller; margin-left: 20px;">{{ Article.time }} {{ Article.author }} | {{ Article.slug }}</div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock content %}
